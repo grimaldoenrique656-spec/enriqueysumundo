@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>El pequeño mundo de Enrique</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #fceff9;
+      --color-card: #ffffff;
+      --color-primary: #a18aff;
+      --color-secondary: #ffb6b9;
+      --color-text: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+    }
+
+    header {
+      background-color: var(--color-card);
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: var(--color-primary);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--color-secondary);
+      font-weight: 600;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .card {
+      display: none;
+      width: 80%;
+      max-width: 600px;
+      background-color: var(--color-card);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .card img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      color: var(--color-primary);
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+
+    .card p, .card ul {
+      font-size: 1em;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .card ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .card ul li {
+      margin-bottom: 10px;
+    }
+
+    #resetBtn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: var(--color-secondary);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1em;
+      border-radius: 12px;
+      cursor: pointer;
+      z-index: 1000;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--color-card);
+      font-size: 0.9em;
+      color: #777;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>El pequeño mundo de Enrique</h1>
+    <nav>
+      <ul>
+        <li><a data-target="intro">Introducción</a></li>
+        <li><a data-target="bio">Sobre mí</a></li>
+        <li><a data-target="contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <button id="resetBtn">Reiniciar vista</button>
+
+  <main>
+    <div class="card" id="intro">
+      <h2>🌟 Introducción</h2>
+      <img src="DSC00254.JPG" alt="Enrique cantando">
+      <p>Jose Enrique Grimaldo Velazquez nació el 30 de abril de 2008. Desde temprana edad mostró una gran pasión por el canto, expresando sus emociones a través de la música. Además de su amor por el arte, Enrique valoraba profundamente los momentos compartidos con su familia.</p>
+    </div>
+
+    <div class="card" id="bio">
+      <h2>🎶 Sobre mí</h2>
+      <img src="WhatsApp Image 2025-09-08 at 12.31.03 PM.jpeg" alt="Enrique en la rondalla">
+      <p>Con 17 años de edad, Enrique es un joven apasionado por el arte y el deporte. Su vida gira en torno a la música y el voleibol. Actualmente forma parte de una rondalla y un coro, y también es un jugador destacado en torneos juveniles.</p>
+      <p>Y aunque a veces la vida puede sentirse pesada, cuando se siente débil o solo, Enrique sabe que cuenta con una amiga muy especial llamada <strong>Sohemi</strong>. Ella siempre está ahí para apoyarlo, escucharle y recordarle que no está solo. Su amistad es un refugio cálido en los días nublados.</p>
+    </div>
+
+    <div class="card" id="contacto">
+      <h2>📞 Contacto</h2>
+      <img src="WhatsApp Image 2025-09-08 at 12.35.53 PM.jpeg" alt="Enrique en evento escolar">
+      <ul>
+        <li>📱 <strong>WhatsApp:</strong> +52 1 488 122 38 52</li>
+        <li>📧 <strong>Email:</strong> grimaldoenrique656@gmail.com</li>
+        <li>🎶 <strong>Rondalla & Coro:</strong> Disponible para eventos</li>
+        <li>🏐 <strong>Voleibol:</strong> Participante activo</li>
+        <li>📍 <strong>Ubicación:</strong> San Luis Potosí, México</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Enrique. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const resetBtn = document.getElementById('resetBtn');
+    const menuLinks = document.querySelectorAll('nav a');
+
+    menuLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('data-target');
+        cards.forEach(card => {
+          card.style.display = 'none';
+          card.classList.remove('expanded');
+        });
+        const targetCard = document.getElementById(targetId);
+        if (targetCard) {
+          targetCard.style.display = 'block';
+          resetBtn.style.display = 'block';
+        }
+      });
+    });
+
+    resetBtn.addEventListener('click', () => {
+      cards.forEach(card => {
+        card.style.display = 'none';
+        card.classList.remove('expanded');
+      });
+      resetBtn.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
